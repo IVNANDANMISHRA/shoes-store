@@ -11,31 +11,31 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-      <div className="h-64 overflow-hidden">
+      <div className="h-48 sm:h-56 lg:h-64 overflow-hidden">
         <img
           src={product.image}
           alt={product.name}
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         />
       </div>
-      <div className="p-4">
+      <div className="p-3 sm:p-4">
         <div className="flex justify-between items-start mb-2">
-          <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
-          <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-800 flex-1 mr-2">{product.name}</h3>
+          <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded whitespace-nowrap">
             {product.category}
           </span>
         </div>
-        <p className="text-sm text-gray-500 mb-3">{product.brand}</p>
-        <div className="flex justify-between items-center">
-          <span className="text-2xl font-bold text-gray-900">
+        <p className="text-xs sm:text-sm text-gray-500 mb-3">{product.brand}</p>
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-2">
+          <span className="text-xl sm:text-2xl font-bold text-gray-900">
             ${product.price.toFixed(2)}
           </span>
           <button
             onClick={handleAddToCart}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors duration-200"
+            className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-4 py-2 rounded-lg flex items-center justify-center gap-2 transition-colors duration-200 text-sm sm:text-base"
           >
-            <ShoppingCart size={18} />
-            Add to Cart
+            <ShoppingCart size={16} />
+            <span>Add</span>
           </button>
         </div>
       </div>
